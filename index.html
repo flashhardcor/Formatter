@@ -25,8 +25,11 @@
       margin-bottom: 5px;
     }
 
+    /* Adjusted width for the textarea */
     textarea {
-      width: 100%;
+      width: 50%; /* Set to 50% to restrict it to half of the page */
+      max-width: 100%; /* Ensure it doesn't exceed 100% in case of smaller screens */
+      margin-bottom: 10px; /* Optional: Add some margin for spacing */
     }
 
     button {
@@ -49,6 +52,7 @@
   <h1>Email List Formatter</h1>
   <form id="emailForm">
     <label for="emailInput">Enter Email Addresses (one per line):</label>
+    <!-- Adjusted width for the textarea -->
     <textarea id="emailInput" rows="5" cols="30"></textarea>
     <button type="button" onclick="formatEmails()">Format Emails</button>
   </form>
@@ -60,6 +64,16 @@
       const formattedList = addSemicolons(emailInput);
       document.getElementById('output').innerText = formattedList;
     }
+
+    function addSemicolons(emailAddresses) {
+      const addressesArray = emailAddresses.split('\n').map(address => address.trim());
+      const validAddresses = addressesArray.filter(address => address !== '');
+      return validAddresses.join('; ');
+    }
+  </script>
+</body>
+</html>
+
 
     <!DOCTYPE html>
 <html lang="en">
