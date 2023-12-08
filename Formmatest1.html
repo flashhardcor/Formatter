@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email List Formatter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #FFDDC1; /* Light Orange */
+      color: #0073A8; /* Pantone 637C Blue */
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    textarea {
+      width: 100%;
+    }
+
+    button {
+      display: block;
+      margin-top: 10px;
+      background-color: #0073A8; /* Pantone 637C Blue */
+      color: #FFDDC1; /* Light Orange */
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Email List Formatter</h1>
+  <form id="emailForm">
+    <label for="emailInput">Enter Email Addresses (one per line):</label>
+    <textarea id="emailInput" rows="5" cols="30"></textarea>
+    <button type="button" onclick="formatEmails()">Format Emails</button>
+  </form>
+  <div id="output"></div>
+
+  <script>
+    function formatEmails() {
+      const emailInput = document.getElementById('emailInput').value;
+      const formattedList = addSemicolons(emailInput);
+      document.getElementById('output').innerText = formattedList;
+    }
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email List Formatter</title>
+</head>
+<body>
+  <h1>Email List Formatter</h1>
+  <form id="emailForm">
+    <label for="emailInput">Enter Email Addresses (one per line):</label>
+    <textarea id="emailInput" rows="5" cols="30"></textarea>
+    <button type="button" onclick="formatEmails()">Format Emails</button>
+  </form>
+  <div id="output"></div>
+
+  <script>
+    function formatEmails() {
+      const emailInput = document.getElementById('emailInput').value;
+      const formattedList = addSemicolons(emailInput);
+      document.getElementById('output').innerText = formattedList;
+    }
+
+    function addSemicolons(emailAddresses) {
+      const addressesArray = emailAddresses.split('\n').map(address => address.trim());
+      const validAddresses = addressesArray.filter(address => address !== '');
+      return validAddresses.join('; ');
+    }
+  </script>
+</body>
+</html>
+
+    function addSemicolons(emailAddresses) {
+      const addressesArray = emailAddresses.split('\n').map(address => address.trim());
+      const validAddresses = addressesArray.filter(address => address !== '');
+      return validAddresses.join('; ');
+    }
+  </script>
+</body>
+</html>
